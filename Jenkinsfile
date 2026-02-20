@@ -6,7 +6,7 @@ pipeline {
         stage("Build & Test (main only)") {
             when {
                 expression {
-                    env.GIT_BRANCH?.endsWith('main')
+                    env.BRANCH_NAME?.endsWith('main')
                 }
             }
 
