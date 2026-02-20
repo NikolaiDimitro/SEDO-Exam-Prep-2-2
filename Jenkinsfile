@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout main branch
+                
                 git branch: 'main', url: 'https://github.com/NikolaiDimitro/SEDO-Exam-Prep-2-2.git'
             }
         }
@@ -12,7 +12,7 @@ pipeline {
         stage('Build & Test (main only)') {
             when {
                 expression {
-                    // Проверяваме текущия branch
+                    
                     env.GIT_BRANCH == 'origin/main' || env.GIT_BRANCH == 'main'
                 }
             }
